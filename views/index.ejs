@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  <header>
+    <h1><%= title %></h1>
+    <ul id="type" class="type">
+    	<li data-type="dot">Dot</li>
+    	<li data-type="column" class="selected">Column</li>
+    </ul>
+    <br>
+    <p>Volume <input id="Volume"  type="range" min="0" max="100" value="60"></p>
+    <div id="process">
+      <span id="finished" style="width: 0px"></span>
+    </div>
+  </header>
+  <div class="left">
+    <div id="btn">
+      <!-- 隐藏input控件，通过点击label来触发 -->
+      <label for="uploadFile">上传本地音乐</label>
+      <!-- 在页面放一个file类型的input。然后在JavaScript中监听它的onchange事件 -->
+      <input type="file" id="uploadFile"></input>
+    </div>
+  	<ul id="nav">
+  		<% music.forEach(function(name){ %>
+  			<li title="<%= name %>"><%= name %></li>
+  		<% }) %>
+  	</ul>
+  </div>
+  <div class="right" id="canvasCont"></div>
+  <script type="text/javascript" src="/javascripts/MusicVisualizer.js"></script>
+  <script type="text/javascript" src="/javascripts/index.js"></script>
+  </body>
+</html>
