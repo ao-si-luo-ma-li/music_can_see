@@ -1,0 +1,119 @@
+body {
+	background: #000;
+	text-align: center;
+  	padding: 10px;
+  	color: #fff;
+  	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  	color: #00B7FF;
+}
+*{ padding: 0; margin: 0; box-sizing: border-box;; }
+
+header,
+.left,.right{ position: absolute; }
+
+header{
+	left: 10px;
+	right: 10px;
+	top: 10px;
+	height: 150px;
+	/*border: 1px solid #fff;*/
+}
+header h1{ font-size: 40px; height: 60px; line-height: 60px; }
+
+.left{ left: 10px; top: 170px; bottom: 10px; width: 15%; border: 1px solid #fff; overflow: hidden;}
+.left ul li{ height: 30px; line-height: 30px; cursor: pointer; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.left ul li.selected{ color: green; }
+.right{
+	top: 170px;
+	right: 10px;
+	bottom: 10px;
+	left: calc(15% + 20px);
+	/*border: 1px solid #fff*/
+}
+#type li{
+	font-size: 1rem;
+	height: 40px;
+	line-height: 40px;
+	width: 120px;
+	display: inline-block;
+	border: 1px solid #fff;
+	cursor: pointer;
+}
+#type{ font-size: 0px; }
+#type li[data-type="dot"]{
+	border-radius: 4px 0 0 4px;
+}
+#type li[data-type="column"]{
+	border-radius: 0 4px 4px 0;
+}
+#type .selected{
+	background: #fff;
+	color: #000;
+}
+
+input[type="range"]{
+	-webkit-appearance: none;
+	height: 8px;
+	background: #999;
+	border-radius: 10px;
+	border:none;
+	outline: none;
+}
+input[type="range"]::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	height: 12px;
+	width: 12px;
+	background: #fff;
+	border-radius: 100%;
+	border: none;
+}
+input[type="range"]::-moz-range-track{
+	height: 8px;
+	background: #999;
+	border-radius: 10px;
+	border:none;
+}
+input[type="range"]::-moz-range-thumb{
+	height: 12px;
+	width: 12px;
+	background: #fff;
+	border-radius: 100%;
+	border:none;
+}
+
+@media screen and (max-width: 600px),screen and (max-height: 400px) {
+	body{ background: #555; }
+}
+#btn{ 
+	height: 30px;
+	line-height: 30px;
+	 background: #333;
+	 border: 1px solid #999;
+	 cursor: pointer;
+	 margin-bottom: 20px;
+ }
+ #btn:hover{
+ 	background: red
+ }
+ #btn label{ display: block; cursor: pointer;}
+ #uploadFile{ display: none;}
+
+ #process{
+ 	position: relative;
+ 	width: 100%;
+ 	max-width: 300px;
+ 	height: 2px;
+ 	background: #999;
+ 	margin: calc(1% + 5px) auto;
+ }
+ #finished{
+ 	position: absolute;
+ 	left: 0;
+ 	top: 0;
+ 	bottom: 0;
+ 	background: #777;
+ 	height: 4px;
+ }
